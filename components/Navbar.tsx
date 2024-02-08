@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="h-[72px]   max-w-[1240px] sm:px-4 flex items-center justify-between mx-auto  ">
+    <nav className="h-[72px]   lg:max-w-[1240px] sm:px-4 flex items-center justify-between mx-auto  ">
       <div className="p-4">
         <h2 className="text-2xl font-semibold">Decor8AI</h2>
       </div>

@@ -6,7 +6,9 @@ const page = () => {
   return (
     <AuthContextProvider>
       <Navbar />
-      <Hero />
+      <div className="mx-[1.25rem] ">
+        <Hero />
+      </div>
     </AuthContextProvider>
   );
 };
