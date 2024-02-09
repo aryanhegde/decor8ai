@@ -1,5 +1,12 @@
+import NavCreate from "@/components/NavCreate";
+import Navbar from "@/components/Navbar";
+
 const page = () => {
-  return <div>decor8ai</div>;
+  return (
+    <>
+      <NavCreate />
+    </>
+  );
 };
 
 export default page;

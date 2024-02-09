@@ -5,7 +5,6 @@ import React, { FormEvent, useContext, useEffect, useState } from "react";
 import { Button, buttonVariants } from "./ui/button";
 import appwriteService from "@/appwrite/config";
 import { ArrowRight } from "lucide-react";
-import useAuth from "@/context/useAuth";
 import AuthContext from "@/context/authContext";
 
 type Props = {
@@ -26,6 +25,16 @@ const Navbar = () => {
     }
   };
 
+  const logout = async (e: any) => {
+    e.preventDefault();
+
+    try {
+      await appwriteService.logout();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <nav className="h-[72px]   lg:max-w-[1240px] sm:px-4 flex items-center justify-between mx-auto  ">
       <div className="p-4">
@@ -35,6 +44,9 @@ const Navbar = () => {
         <Link href="/pricing" className="">
           Pricing
         </Link>
+        <Button variant="outline" className="-mr-10" onClick={logout}>
+          LOGOUT
+        </Button>
         {authStatus ? (
           <Link href="/create" className={`${buttonVariants()}`}>
             /create
